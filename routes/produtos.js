@@ -1,6 +1,5 @@
-function listarProdutos(){
-
-    const produtos = [
+class Produtos {
+    static produtos = [
         {
             id: 1,
             nome: 'hatsune miku',
@@ -12,7 +11,33 @@ function listarProdutos(){
             valor: 2.50
         },
     ];
-    return produtos;
-};
+    
+    static listar(){
+        return Produtos.produtos;
+    };
 
-module.exports = listarProdutos
+    static add(id, nome, valor){
+        Produtos.produtos.push({
+            id: id,
+            nome: nome,
+            valor: valor
+        });
+    }
+    
+    static edit(indice){
+
+    }
+
+    static del(indice){
+        Produtos.produtos.splice(indice, 1);
+    }
+
+}
+
+module.exports = Produtos
+
+//CRUD
+//Create = Criar registro no banco de dados
+//Read = Realizar uma leitura no banco de dados
+//Update = Atualizar os dados
+//Delete = Deletar os dados
